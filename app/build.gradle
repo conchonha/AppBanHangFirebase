@@ -1,0 +1,90 @@
+plugins {
+    id 'com.android.application'
+    id("org.jetbrains.kotlin.android") version "1.8.21"
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+    id 'androidx.navigation.safeargs'
+    id 'dagger.hilt.android.plugin'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.sangtb.appbanhang_firebase'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.sangtb.appbanhang_firebase"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+}
+
+dependencies {
+
+    implementation files("libs/AndroidLibrary.aar")
+
+    implementation "androidx.core:core-ktx:${rootProject.ext.lib_versions.corektx}"
+    implementation "androidx.appcompat:appcompat:${rootProject.ext.lib_versions.appCompart}"
+    implementation "com.google.android.material:material:${rootProject.ext.lib_versions.material}"
+    implementation "androidx.constraintlayout:constraintlayout:${rootProject.ext.lib_versions.constraintlayout}"
+
+    //lifecycle
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:${rootProject.ext.lib_versions.lifecycle}")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:${rootProject.ext.lib_versions.lifecycle}")
+
+    //coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${rootProject.ext.lib_versions.coroutinesVersion}"
+
+    //navigation
+    implementation("androidx.navigation:navigation-fragment-ktx:${rootProject.ext.lib_versions.navigation}")
+    implementation("androidx.navigation:navigation-ui-ktx:${rootProject.ext.lib_versions.navigation}")
+
+    // Retrofit
+    implementation("com.squareup.retrofit2:retrofit:${rootProject.ext.lib_versions.retrofit}")
+    implementation("com.squareup.retrofit2:converter-gson:${rootProject.ext.lib_versions.retrofit}")
+    implementation "com.squareup.okhttp3:logging-interceptor:${rootProject.ext.lib_versions.logging}"
+
+    //HILT
+    implementation("com.google.dagger:hilt-android:${rootProject.ext.lib_versions.hilt}")
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    kapt("com.google.dagger:hilt-android-compiler:${rootProject.ext.lib_versions.hilt}")
+
+    // round imageview
+    implementation "com.makeramen:roundedimageview:${rootProject.ext.lib_versions.roundedimageviewVersion}"
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:${rootProject.ext.lib_versions.glide}"
+    kapt "com.github.bumptech.glide:compiler:${rootProject.ext.lib_versions.glide}"
+    implementation "jp.wasabeef:glide-transformations:${rootProject.ext.lib_versions.glideTransformations}"
+
+    implementation "androidx.core:core-splashscreen:${rootProject.ext.lib_versions.splashscreen}"
+
+    implementation 'commons-codec:commons-codec:1.15'
+
+    implementation platform('com.google.firebase:firebase-bom:32.1.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-auth-ktx'
+}

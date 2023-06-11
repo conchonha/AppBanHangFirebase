@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">App Ban Hang Firebase</string>
+    <string name="token_het_han">Token đã hết hạn, Đăng nhập lại để tiếp tục sử dụng!</string>
+</resources>

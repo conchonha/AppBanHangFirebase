@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_onboard"
+    app:startDestination="@id/fragmentAuth">
+
+    <fragment
+        android:id="@+id/fragmentAuth"
+        android:name="com.sangtb.appbanhang_firebase.ui.fragment.onboard.FragmentAuth"
+        android:label="FragmentAuth" />
+    <fragment
+        android:id="@+id/fragmentEmailPassword"
+        android:name="com.sangtb.appbanhang_firebase.ui.fragment.onboard.FragmentEmailPassword"
+        android:label="FragmentEmailPassword" />
+    <fragment
+        android:id="@+id/fragmentPhone"
+        android:name="com.sangtb.appbanhang_firebase.ui.fragment.onboard.FragmentPhone"
+        android:label="FragmentPhone" />
+    <fragment
+        android:id="@+id/fragmentFaceBook"
+        android:name="com.sangtb.appbanhang_firebase.ui.fragment.onboard.FragmentFaceBook"
+        android:label="FragmentFaceBook" />
+    <fragment
+        android:id="@+id/fragmentGoogle"
+        android:name="com.sangtb.appbanhang_firebase.ui.fragment.onboard.FragmentGoogle"
+        android:label="FragmentGoogle" />
+    <fragment
+        android:id="@+id/dashBoardFragment"
+        android:name="com.sangtb.appbanhang_firebase.ui.fragment.dash_board.DashBoardFragment"
+        android:label="DashBoardFragment" />
+</navigation>
