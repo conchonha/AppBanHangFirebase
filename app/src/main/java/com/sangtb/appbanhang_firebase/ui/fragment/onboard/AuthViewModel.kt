@@ -43,6 +43,7 @@ class AuthViewModel(application: Application) : BaseViewModel(application) {
             3 -> navigateToDestination(R.id.fragmentGoogle)
             4 -> navigateToDestination(R.id.fragmentPhone)
             5 -> navigateToDestination(R.id.fragmentEmailLink)
+            6 -> navigateToDestination(R.id.fragmentBiometricFingerprintAuth)
             else -> navigateToDestination(
                 R.id.fragmentEmailPassword, bundleOf(Const.IS_LOGIN_KEY to false)
             )
@@ -50,7 +51,7 @@ class AuthViewModel(application: Application) : BaseViewModel(application) {
     }
 
     fun loginEmailPass() {
-        if (isLogin) {
+        if (!isLogin) {
             firebaseAuth.createUserWithEmailAndPassword(
                 email.value.toString(), password.value.toString()
             ).addOnFailureListener {
@@ -94,10 +95,12 @@ class AuthViewModel(application: Application) : BaseViewModel(application) {
         appLauncher.launcherIntent(ggClient.signInIntent) {
             if (it.resultCode == Activity.RESULT_OK) {
                 GoogleSignIn.getSignedInAccountFromIntent(it.data)
-                    .addOnCompleteListener {task->
+                    .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
-                            val authCredential: AuthCredential = GoogleAuthProvider.getCredential(task.result.idToken, null)
-                            firebaseAuth.signInWithCredential(authCredential).addOnFailureListener {e->
+                            val authCredential: AuthCredential =
+                                GoogleAuthProvider.getCredential(task.result.idToken, null)
+                            firebaseAuth.signInWithCredential(authCredential)
+                                .addOnFailureListener { e ->
                                     showDialogException(e)
                                 }
                         } else {

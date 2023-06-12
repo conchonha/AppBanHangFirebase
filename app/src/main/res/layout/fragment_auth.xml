@@ -48,6 +48,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="@{()->vm.login(6)}"
+            android:text="Xác thực bằng vân tay" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->vm.login(7)}"
             android:text="RegisterEmail" />
     </LinearLayout>
 </layout>

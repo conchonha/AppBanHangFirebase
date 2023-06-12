@@ -37,4 +37,8 @@
             android:id="@+id/deepLinkHome"
             app:uri="localhost/myapp" />
     </fragment>
+    <fragment
+        android:id="@+id/fragmentBiometricFingerprintAuth"
+        android:name="com.sangtb.appbanhang_firebase.ui.fragment.onboard.FragmentBiometricFingerprintAuth"
+        android:label="FragmentBiometricFingerprintAuth" />
 </navigation>
