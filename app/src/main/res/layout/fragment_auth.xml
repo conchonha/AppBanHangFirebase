@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="@{()->vm.login(5)}"
-            android:text="Login Email Link" />
+            android:text="Verify email bằng OTP code" />
 
         <Button
             android:layout_width="match_parent"

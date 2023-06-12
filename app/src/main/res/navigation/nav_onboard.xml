@@ -30,10 +30,11 @@
         android:label="DashBoardFragment" />
     <fragment
         android:id="@+id/fragmentEmailLink"
-        android:name="com.sangtb.appbanhang_firebase.ui.fragment.onboard.FragmentEmailLink"
-        android:label="FragmentEmailLink">
+        android:name="com.sangtb.appbanhang_firebase.ui.fragment.onboard.FragmentVerifyEmailOtpCode"
+        android:label="FragmentEmailLink"
+        >
         <deepLink
             android:id="@+id/deepLinkHome"
-            app:uri="www.example.com" />
+            app:uri="localhost/myapp" />
     </fragment>
 </navigation>

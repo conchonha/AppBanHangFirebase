@@ -22,6 +22,8 @@
             android:name=".ui.MainActivity"
             android:screenOrientation="portrait"
             android:exported="true">
+            <nav-graph android:value="@navigation/nav_onboard" />
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,11 +36,8 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="http" />
                 <data android:scheme="https" />
-                <data android:host="www.example.com" />
-                <data android:host="mobile.example.com" />
+                <data android:host="localhost/myapp" />
             </intent-filter>
-
-            <nav-graph android:value="@navigation/nav_onboard" />
         </activity>
     </application>
 
