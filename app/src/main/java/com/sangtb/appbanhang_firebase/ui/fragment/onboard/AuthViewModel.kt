@@ -5,6 +5,7 @@ import android.app.Application
 import android.util.Log
 import androidx.core.os.bundleOf
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.ActionCodeSettings
@@ -19,6 +20,8 @@ import com.sangtb.appbanhang_firebase.R
 import com.sangtb.appbanhang_firebase.utils.Const
 import com.sangtb.appbanhang_firebase.utils.showDialogException
 import com.sangtb.appbanhang_firebase.utils.showDialogExceptionWithReload
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 class AuthViewModel(application: Application) : BaseViewModel(application) {
@@ -47,6 +50,14 @@ class AuthViewModel(application: Application) : BaseViewModel(application) {
             else -> navigateToDestination(
                 R.id.fragmentEmailPassword, bundleOf(Const.IS_LOGIN_KEY to false)
             )
+        }
+    }
+
+
+    init {
+        viewModelScope.launch {
+            delay(10000)
+            senDataResponse("Test","SangDepTrai")
         }
     }
 
@@ -110,4 +121,6 @@ class AuthViewModel(application: Application) : BaseViewModel(application) {
             }
         }
     }
+
+
 }
