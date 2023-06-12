@@ -19,6 +19,7 @@
             android:onClick="@{()->vm.login(1)}"
             android:text="LoginEmail" />
 
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -36,5 +37,17 @@
             android:layout_height="wrap_content"
             android:onClick="@{()->vm.login(4)}"
             android:text="Login Phone" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->vm.login(5)}"
+            android:text="Login Email Link" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->vm.login(6)}"
+            android:text="RegisterEmail" />
     </LinearLayout>
 </layout>
