@@ -41,4 +41,8 @@
         android:id="@+id/fragmentBiometricFingerprintAuth"
         android:name="com.sangtb.appbanhang_firebase.ui.fragment.onboard.FragmentBiometricFingerprintAuth"
         android:label="FragmentBiometricFingerprintAuth" />
+    <fragment
+        android:id="@+id/fragmentProfile"
+        android:name="com.sangtb.appbanhang_firebase.ui.fragment.onboard.profile.FragmentProfile"
+        android:label="FragmentProfile" />
 </navigation>

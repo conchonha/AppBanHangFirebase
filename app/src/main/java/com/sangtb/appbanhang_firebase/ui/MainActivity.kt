@@ -1,5 +1,6 @@
 package com.sangtb.appbanhang_firebase.ui
 
+import androidx.lifecycle.MutableLiveData
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuth.AuthStateListener
 import com.sangtb.androidlibrary.base.BaseActivity
@@ -38,7 +39,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                         Const.firebaseUser = it.currentUser
                         if (Const.firebaseUser?.isEmailVerified == true) {
                             SharePrefs.getInstance().put(Const.IS_LOGIN, true)
-                            navController.navigate(R.id.dashBoardFragment)
+                            navController.navigate(R.id.fragmentProfile)
                         } else {
                             showAlertDialog(DialogData(
                                 title = "You can verify Email Coutinue using service",
