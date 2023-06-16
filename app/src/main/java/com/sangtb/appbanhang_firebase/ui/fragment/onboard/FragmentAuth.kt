@@ -10,6 +10,6 @@ class FragmentAuth : BaseFragment<FragmentAuthBinding, AuthViewModel>() {
     override val viewModel: AuthViewModel by viewModels()
 
     override fun onInit() {
-        binding?.vm = viewModel
+//        binding?.vm = viewModel
     }
 }

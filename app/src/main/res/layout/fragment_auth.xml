@@ -1,59 +1,216 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <data>
-
-        <variable
-            name="vm"
-            type="com.sangtb.appbanhang_firebase.ui.fragment.onboard.AuthViewModel" />
-    </data>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:background="@drawable/bg">
 
-        <Button
+        <RelativeLayout
+            android:id="@+id/relativelayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="@{()->vm.login(1)}"
-            android:text="LoginEmail" />
+            android:layout_height="match_parent"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="105dp"
+            android:background="@drawable/boder">
+
+            <TextView
+                android:id="@+id/tieude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@null"
+                android:padding="10dp"
+                android:text="Login"
+                android:textColor="#F8F6F6"
+                android:textSize="35sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textinputlayoutuser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tieude"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                app:boxBackgroundMode="none">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edittextusername"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@null"
+                    android:backgroundTint="@android:color/transparent"
+                    android:drawableStart="@drawable/ic_user"
+                    android:drawablePadding="10dp"
+                    android:hint="UserName"
+                    android:inputType="text"
+                    android:textColor="#fff"
+                    android:textColorHint="#fff"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#ECE5E5" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textinputlayoutpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textinputlayoutuser"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                app:boxBackgroundMode="none">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edittextpassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@{null}"
+                    android:backgroundTint="@android:color/transparent"
+                    android:drawableStart="@drawable/ic_pass"
+                    android:drawablePadding="10dp"
+                    android:hint="Password"
+                    android:paddingStart="-3dp"
+                    android:inputType="textPassword"
+                    android:textColor="#E4E5EB"
+                    android:textColorHint="#E7DCDC"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#ECE5E5" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <CheckBox
+                android:id="@+id/ckeckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textinputlayoutpassword"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="@dimen/_15dp"
+                android:layout_marginRight="50dp"
+                android:buttonTint="#fff"
+                android:checked="true"
+                android:enabled="false"
+                android:text="Remember me"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/btndangnhap"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40dp"
+                android:layout_below="@+id/ckeckbox"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="@dimen/_20dp"
+                android:layout_marginRight="50dp"
+                android:background="#E63241"
+                android:text="Login"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                app:backgroundTint="#F30202" />
+
+            <LinearLayout
+                android:id="@+id/linnerlayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btndangnhap"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="50dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:background="#fff" />
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="@dimen/_40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="@dimen/_10dp"
+                    android:background="@drawable/boderedittext"
+                    android:gravity="center"
+                    android:text="OR"
+                    android:textColor="#fff" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:background="#fff" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50dp"
+                android:layout_below="@+id/linnerlayout"
+                android:layout_marginHorizontal="@dimen/_30dp"
+                android:layout_marginTop="@dimen/_5dp">
+
+                <ImageView
+                    style="@style/FocusClick"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_facebook" />
+
+                <ImageView
+                    style="@style/FocusClick"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_google" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textcauhoi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll2"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="5dp"
+                android:padding="5dp"
+                android:text="Do not have account?"
+                android:textColor="#1231DD"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textdangky"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll2"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="50dp"
+                android:layout_toRightOf="@+id/textcauhoi"
+                android:padding="5dp"
+                android:text="Create"
+                android:textColor="#F44336"
+                android:textStyle="bold|italic" />
 
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="@{()->vm.login(2)}"
-            android:text="Login FaceBook" />
+        </RelativeLayout>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="@{()->vm.login(3)}"
-            android:text="Login google" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="@{()->vm.login(4)}"
-            android:text="Login Phone" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="@{()->vm.login(5)}"
-            android:text="Verify email bằng OTP code" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="@{()->vm.login(6)}"
-            android:text="Xác thực bằng vân tay" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="@{()->vm.login(7)}"
-            android:text="RegisterEmail" />
     </LinearLayout>
 </layout>

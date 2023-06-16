@@ -54,13 +54,6 @@ class AuthViewModel(application: Application) : BaseViewModel(application) {
     }
 
 
-    init {
-        viewModelScope.launch {
-            delay(10000)
-            senDataResponse("Test","SangDepTrai")
-        }
-    }
-
     fun loginEmailPass() {
         if (!isLogin) {
             firebaseAuth.createUserWithEmailAndPassword(
